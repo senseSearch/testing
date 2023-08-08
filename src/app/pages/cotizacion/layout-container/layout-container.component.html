@@ -1,18 +1,28 @@
 <mat-card fxFlex class="example-card">
     <mat-card-header>
-        <mat-card-title> Cotizacion </mat-card-title>
-        <mat-card-subtitle> productos de impresion </mat-card-subtitle>
+        <mat-card-title> {{ tittle }} </mat-card-title>
+        <mat-card-subtitle> {{ subtittle }} </mat-card-subtitle>
     </mat-card-header>
 
+    <!-- componente dinamico -->
     <mat-card-content>
-        <div fxLayout="column">
+        <ng-container #appContenedor></ng-container>
+    </mat-card-content>
 
-            <button mat-button>LIKE</button>
+    <mat-card-content *ngIf="step == 0">
+        <ul fxLayout="row wrap">
+            <li matRipple class="Boption" *ngFor="let categoria of categorias" (click)="cargarComponente(categoria)"> {{
+                categoria.name }} </li>
+        </ul>
+    </mat-card-content>
+
+    <mat-card-content *ngIf="step == 1">
+        <div fxLayout="row wrap">
 
             <mat-tab-group mat-align-tabs=" start">
                 <mat-tab label="FACTURA">
                     <div fxLayout="row" fxLayoutGap="3px" fxLayoutAlign="start center">
-                        <p>option 1</p>
+                        <p> option 1 </p>
                     </div>
                 </mat-tab>
 
@@ -62,15 +72,27 @@
                 </button>
             </mat-form-field>
 
-            <p>{{ longText }}</p>
+            <p>{{ tittle }}</p>
         </div>
     </mat-card-content>
 
-    <mat-card-actions>
+    <mat-card-content *ngIf="step == 2">
+        <div fxLayout="row wrap">
+            <h1>PUBLICITARIO</h1>
+        </div>
+    </mat-card-content>
+
+    <mat-card-content *ngIf="step == 2">
+        <div fxLayout="row wrap">
+            <h1>PUBLICITARIO</h1>
+        </div>
+    </mat-card-content>
+    <!-- <mat-card-actions>
         <button mat-button>LIKE</button>
         <button mat-button>SHARE</button>
-    </mat-card-actions>
+    </mat-card-actions> -->
     <mat-card-footer>
+        <button mat-button *ngIf="step != 0" (click)="before()">anterior</button>
         <!-- <mat-progress-bar mode="indeterminate"></mat-progress-bar> -->
     </mat-card-footer>
 </mat-card>
