@@ -1,0 +1,4 @@
+<p>btn-transition works!</p>
+<h4>The box is now {{ isOpen ? 'Open' : 'Closed' }}!</h4>
+<button mat-button (click)="toggle()"> ANIMACION </button>
+<div @myInsertRemoveTrigger @flyInOut [@openClosed]="isOpen ? 'open': 'closed'" class="open-close-container"></div>

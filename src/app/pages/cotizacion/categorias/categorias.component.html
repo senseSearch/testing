@@ -1,0 +1,41 @@
+<!-- ...Test
+    v1 component comunication
+<app-component-a></app-component-a>
+<app-component-b></app-component-b> -->
+
+<!-- ...Test animation
+    <app-btn-transition></app-btn-transition> -->
+
+<!-- ... test comunications v2
+    <app-admin></app-admin> -->
+
+<app-main-layout></app-main-layout>
+
+<h1>categorias component</h1>
+<app-opt-button></app-opt-button>
+
+<mat-card fxFlex class="custom-card">
+    <mat-card-header>
+        <mat-card-title> {{ tittle }} </mat-card-title>
+        <mat-card-subtitle> {{ subtittle }} </mat-card-subtitle>
+    </mat-card-header>
+
+    <!-- componente dinamico -->
+    <mat-card-content class="alignItems">
+        <a matRipple routerLink='/paso-1' class="Boption"> paso-1 </a><br>
+        <a matRipple routerLink='/paso-2' class="Boption"> paso-2 </a><br>
+        <a matRipple routerLink='/paso-3' class="Boption"> paso-3 </a><br>
+
+        <!-- <a mat-button class="Boption" (click)="navegarA(1)">paso 1</a>
+        <a matRipple class="Boption" (click)="navegarA(2)">paso 2</a>
+        1<a matRipple class="Boption" (click)="navegarA(3)">paso 3</a> -->
+
+        <input type="text" [(ngModel)]="mensaje">
+        <button mat-button (click)="enviarMensaje()">enviar mensaje</button>
+    </mat-card-content>
+
+    <mat-card-footer>
+        <button mat-button *ngIf="step != 0" (click)="before()">anterior</button>
+        <!-- <mat-progress-bar mode="indeterminate"></mat-progress-bar> -->
+    </mat-card-footer>
+</mat-card>

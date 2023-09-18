@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Categoria } from 'src/app/core/categoria.interface';
+import { CotizacionService } from '../cotizacion.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-component1',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Component1Component implements OnInit {
 
-  constructor() { }
+  categorias: Categoria[] = [];
+
+  constructor(private router: Router, private cotizacionService: CotizacionService) {
+
+  }
+
+  navegarA(paso: number) {
+    this.router.navigate([`/paso-${paso}`])
+  }
 
   ngOnInit(): void {
+    this.categorias = this.cotizacionService.getCategorias();
   }
 
 }

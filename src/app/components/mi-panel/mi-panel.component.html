@@ -1,0 +1,98 @@
+<mat-expansion-panel hideToggle>
+  <!-- *************** contenido de panel *************** -->
+  <!-- 
+    "idCliente": 10,
+    "idSucursal": 10,
+    "idProducto": 10,
+
+    "idPedido": 10,
+    
+    "cantidad": 20,
+    "adelantoProd": 5,
+    "fechaPedido": null,
+    "horaPedido": "",
+    "fechaEntrega": "",
+    "horaEntrega": "",
+    "estado": "proceso",
+    "anticipo": 250,
+    "montoTotal": 950
+-->
+
+  <mat-expansion-panel-header>
+    <div fxFlex fxLayout="row" fxLayout.xs="column">
+      <mat-panel-title fxFlex="30" fxFlex.xs="100">
+        <div class="paneImg">
+          <!-- <img mat-card-image src="assets/card-img-1.jpg" alt="" /> -->
+        </div>
+
+        <div fxLayout="column" fxLayoutAlign="center stretch">
+          <!-- <mat-icon>account_circle</mat-icon> -->
+          <h4 style="margin: 3px 0px">{{ pedido.idCliente }}</h4>
+          <h4>Nit: {{ pedido.idCliente }}</h4>
+        </div>
+      </mat-panel-title>
+      <mat-divider [vertical]="true"></mat-divider>
+
+      <mat-panel-description fxFlex="70" fxFlex.xs="100" fxShow fxHide.xs>
+        <div fxFlex fxLayout="row" fxLayout.xs="column">
+          <div fxFlex="25" fxLayout="column">
+            <h4 style="margin: 3px 0px">tipo producto</h4>
+            <h4>Sucursal: {{ pedido.idSucursal }}</h4>
+          </div>
+          <mat-divider [vertical]="true"></mat-divider>
+
+          <div fxFlex="25" fxLayout="column" fxLayoutAlign="center">
+            <h4 style="margin: 3px 0px">Cantidad: {{ pedido.cantidad }}</h4>
+            <h4>Adelantos: {{ pedido.adelantoProd }}</h4>
+          </div>
+          <mat-divider [vertical]="true"></mat-divider>
+
+          <div fxFlex="25" fxLayout="column" fxLayoutAlign="center start">
+            <h4 style="margin: 3px 0px">Fecha: {{ pedido.fechaPedido }}</h4>
+            <h4>Entrega: {{ pedido.fechaEntrega }}</h4>
+          </div>
+          <mat-divider [vertical]="true"></mat-divider>
+
+          <div fxFlex="25" fxLayout="column" fxLayoutAlign="center start">
+            <div fxLayout="row" fxLayoutAlign="center start">
+              <button mat-icon-button (click)="moveUp($event)">
+                <mat-icon>arrow_upward</mat-icon>
+              </button>
+              <button mat-icon-button (click)="$event.stopPropagation()">
+                <mat-icon>arrow_downward</mat-icon>
+              </button>
+              <button
+                mat-icon-button
+                color="warn"
+                (click)="$event.stopPropagation()"
+              >
+                <mat-icon>clear</mat-icon>
+              </button>
+              <button color="primary" mat-flat-button (click)="msg($event)">
+                {{ pedido.estado }}
+              </button>
+            </div>
+          </div>
+        </div>
+      </mat-panel-description>
+    </div>
+  </mat-expansion-panel-header>
+
+  <!-- *************** contenido de panel *************** -->
+
+  <mat-panel-description>
+    <mat-panel-title>
+      <mat-list-item> <h2>mat description</h2></mat-list-item>
+    </mat-panel-title>
+
+    <mat-form-field appearance="fill">
+      <mat-label>First name</mat-label>
+      <input matInput />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Age</mat-label>
+      <input matInput type="number" min="1" />
+    </mat-form-field>
+  </mat-panel-description>
+</mat-expansion-panel>

@@ -1,11 +1,21 @@
 * {
-    background-color: red;
+    /* blue gradient
+    background: linear-gradient(45deg, #9201d0, #0084ff); */
+    background: linear-gradient(45deg, #c901d0, #ff4800);
+
+    /* exapmle gradient
+    background: linear-gradient(45deg, #020024 0%, #090979 35%, #00d4ff 100%); */
 }
 
 .app-background {
     width: 100vw;
     height: 100vh;
     overflow: hidden;
+
+    /* // align center vertical & horizaontal */
+    /* position: absolute; */
+    margin: auto;
+    text-align: center;
     justify-content: center;
     align-items: center;
 }

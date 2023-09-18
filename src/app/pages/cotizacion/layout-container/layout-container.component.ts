@@ -4,6 +4,7 @@ import { Component2Component as component2 } from '../component2/component2.comp
 import { Component3Component as component3 } from '../component3/component3.component';
 import { CotizacionService } from '../cotizacion.service';
 import { Categoria } from 'src/app/core/categoria.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-layout-container',
@@ -15,24 +16,28 @@ export class LayoutContainerComponent implements OnInit {
   @ViewChild('appContenedor', { read: ViewContainerRef, static: true })
   container!: ViewContainerRef;
 
+  categorias: Categoria[];
   tittle: string;
   subtittle: string;
   step: number;
 
   hide = true;
-  categorias: Categoria[] = [];
 
-  constructor(private cotizacionService: CotizacionService) {
+  constructor(private router: Router, private cotizacion: CotizacionService) {
     this.tittle = "categoria";
     this.subtittle = "cotizacion";
     this.step = 0;
-
+    this.categorias = cotizacion.getCategorias();
   }
 
   ngOnInit(): void {
-    this.categorias = this.cotizacionService.getCategorias();
+    this.container.clear();
+    this.container.createComponent(component1);
   }
 
+  navegarA(paso: number) {
+    this.router.navigate([`/paso-${paso}`])
+  }
 
   cargarComponente(cat: Categoria) {
     console.log("creando componente");

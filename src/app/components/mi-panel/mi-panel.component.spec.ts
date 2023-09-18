@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Component3Component } from './component3.component';
+import { MiPanelComponent } from './mi-panel.component';
 
-describe('Component3Component', () => {
-  let component: Component3Component;
-  let fixture: ComponentFixture<Component3Component>;
+describe('MiPanelComponent', () => {
+  let component: MiPanelComponent;
+  let fixture: ComponentFixture<MiPanelComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ Component3Component ]
+      declarations: [ MiPanelComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(Component3Component);
+    fixture = TestBed.createComponent(MiPanelComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

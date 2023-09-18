@@ -1,0 +1,5 @@
+<p>employee works!</p>
+<div *ngFor="let employee of employs$ | async">
+    <p> name {{ employee.name }}</p>
+    <p> age {{ employee.age }}</p>
+</div>

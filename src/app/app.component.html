@@ -1,9 +1,13 @@
-<app-layout-container></app-layout-container>
-<app-custom-stepper [steps]="['Step 1', 'Step 2', 'Step 3']" [currentStep]="1"></app-custom-stepper>
+<!-- <a routerLink="products"> productos </a> -->
+<div [@slideInAnimation]="o.isActivated ? o.activatedRoute : ''" class="app-background">
+  <h1>Cabecera</h1>
+  <router-outlet #o="outlet"></router-outlet>
+</div>
+
+<!-- <app-custom-stepper [steps]="['Step 1', 'Step 2', 'Step 3']" [currentStep]="1"></app-custom-stepper> -->
 
 <!-- <div class="app-background">
   
-
   <!-- Toolbar 
   <svg id="clouds" xmlns="http://www.w3.org/2000/svg" width="2611.084" height="485.677" viewBox="0 0 2611.084 485.677">
     <title>Gray Clouds Background</title>

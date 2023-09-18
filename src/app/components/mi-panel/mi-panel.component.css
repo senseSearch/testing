@@ -1,0 +1,36 @@
+/* my settings*/
+mat-expansion-panel-header {
+  padding: 1.5rem 0.6rem 0.5rem 0.3rem;
+}
+
+mat-panel-title {
+  margin: 0;
+}
+
+.paneImg {
+  width: 88px;
+  height: 53px;
+  max-width: 88px;
+  border-radius: 10%;
+  box-shadow: 0 0 4px gray; 
+  margin: 0 15px 15px 5px;
+  background-image: url('../../../assets/card-img-1.jpg');
+  background-size: cover;
+  /*assets/card-img-1.jpg*/
+}
+
+/*clase de Testeo*/
+.remarcar {
+  border: 2px solid red;
+}
+
+mat-divider {
+  margin-right: 0.5rem;
+}
+
+.mat-button, 
+.mat-flat-button,
+.mat-stroked-button { 
+  border-radius: 25px; 
+}
+

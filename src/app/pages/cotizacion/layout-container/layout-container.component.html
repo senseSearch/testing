@@ -9,15 +9,24 @@
         <ng-container #appContenedor></ng-container>
     </mat-card-content>
 
+    <a matRipple class="Boption" (click)="navegarA(1)">paso 1</a><br>
+    <a matRipple class="Boption" (click)="navegarA(2)">paso 2</a><br>
+    <a matRipple class="Boption" (click)="navegarA(3)">paso 3</a><br>
+
+    <!-- 
+    <a routerLink="/talonario">TALONARIOS</a><br>
+    <a routerLink="/corporativo">CORP</a><br>
+    <a routerLink="/publicitaria">PUBLI</a><br> -->
+
     <mat-card-content *ngIf="step == 0">
-        <ul fxLayout="row wrap">
+        <ul>
             <li matRipple class="Boption" *ngFor="let categoria of categorias" (click)="cargarComponente(categoria)"> {{
                 categoria.name }} </li>
         </ul>
     </mat-card-content>
 
     <mat-card-content *ngIf="step == 1">
-        <div fxLayout="row wrap">
+        <div>
 
             <mat-tab-group mat-align-tabs=" start">
                 <mat-tab label="FACTURA">
@@ -77,13 +86,13 @@
     </mat-card-content>
 
     <mat-card-content *ngIf="step == 2">
-        <div fxLayout="row wrap">
+        <div>
             <h1>PUBLICITARIO</h1>
         </div>
     </mat-card-content>
 
     <mat-card-content *ngIf="step == 2">
-        <div fxLayout="row wrap">
+        <div>
             <h1>PUBLICITARIO</h1>
         </div>
     </mat-card-content>
